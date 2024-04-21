@@ -10,6 +10,7 @@ Route::middleware('auth:sanctum')
         });
 });
 
+
 Route::post('/tokens/create', function (Request $request) {
     $user = \App\Models\User::where('email', $request->get('email'))->first();
     $token = $user->createToken('Test');
