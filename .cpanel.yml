@@ -1,4 +1,0 @@
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/zyozkzdc/public_html/
-    - /bin/cp -R ddd-example $DEPLOYPATH
