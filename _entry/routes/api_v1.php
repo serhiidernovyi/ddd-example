@@ -16,3 +16,7 @@ Route::post('/tokens/create', function (Request $request) {
     $token = $user->createToken('Test');
     return ['token' => $token->plainTextToken];
 });
+
+Route::get('/test', function (Request $request) {
+    return ['test' => 'test'];
+});
