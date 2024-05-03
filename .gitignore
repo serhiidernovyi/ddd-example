@@ -6,4 +6,6 @@
 _ide_helper.php
 _ide_helper_models.php
 /_entry/.env.testing
+/_entry/_docker/mysql
+/index.php
 .php-cs-fixer.cache
