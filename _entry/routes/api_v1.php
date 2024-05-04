@@ -1,22 +1,13 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware('auth:sanctum')
-    ->group(function () {
-        Route::get('/first', function (Request $request) {
-            return ['test' => 'test'];
-        });
-});
+Route::post('login', [AuthController::class, 'login'])->name('login');
 
-
-Route::post('/tokens/create', function (Request $request) {
-    $user = \App\Models\User::where('email', $request->get('email'))->first();
-    $token = $user->createToken('Test');
-    return ['token' => $token->plainTextToken];
-});
-
-Route::get('/test', function (Request $request) {
-    return ['test' => 'test'];
+Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::post('change', [AuthController::class, 'changePassword'])->name('change');
+    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+//    Route::post('register', [RegisterController::class, 'register'])->name('register');
 });

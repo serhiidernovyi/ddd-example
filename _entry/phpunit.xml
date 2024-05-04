@@ -6,10 +6,13 @@
 >
     <testsuites>
         <testsuite name="Unit">
-            <directory>tests/Unit</directory>
+            <directory>./tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Smoke">
+            <directory>./tests/Smoke</directory>
         </testsuite>
         <testsuite name="Feature">
-            <directory>tests/Feature</directory>
+            <directory>./tests/Integration</directory>
         </testsuite>
     </testsuites>
     <source>
